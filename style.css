@@ -1,0 +1,541 @@
+/* ============================
+   MAGUARITA — Sol y Arena
+   House Style CSS
+   ============================ */
+
+:root {
+  /* Brand Palette */
+  --terracota: #B85C38;
+  --terracota-hover: #A04E2E;
+  --oceano: #1B5E7D;
+  --oceano-light: #2A7FA6;
+  --arena: #F0E4D0;
+  --arena-dark: #E8DCC8;
+  --coral: #D4755A;
+  --espresso: #2F2018;
+  --arena-claro: #F9EDDA;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--espresso);
+  background: var(--arena);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- HEADER ---- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--arena-dark);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--terracota);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.wordmark:hover {
+  transform: scale(1.02);
+}
+
+.wordmark .agua {
+  color: var(--oceano);
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--oceano);
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  background: var(--oceano-light);
+  transform: scale(1.05);
+}
+
+.whatsapp-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--arena-claro);
+}
+
+/* ---- HERO ---- */
+.hero {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 7vw, 40px);
+  color: var(--espresso);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  font-size: 15px;
+  color: #6B5C47;
+  margin-bottom: var(--space-lg);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--terracota);
+  color: var(--arena-claro);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+
+.cta-primary:hover {
+  background: var(--terracota-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.3);
+}
+
+.cta-primary svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: transparent;
+  color: var(--espresso);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--arena-dark);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+
+.cta-secondary:hover {
+  border-color: var(--coral);
+  background: rgba(212, 117, 90, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ---- SECTIONS ---- */
+.section {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: #8A7A5F;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+}
+
+/* ---- STEPS ---- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step:hover {
+  transform: translateX(6px) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: var(--radius-full);
+  background: var(--oceano);
+  color: var(--arena-claro);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover .step-number {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.step-text {
+  font-size: 14px;
+  color: var(--espresso);
+  font-weight: 400;
+}
+
+/* ---- TRUST ---- */
+.trust-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.trust-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trust-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.trust-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.trust-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(27, 94, 125, 0.08);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.trust-card:hover .trust-icon {
+  background: rgba(27, 94, 125, 0.15);
+  transform: scale(1.05);
+}
+
+.trust-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--oceano);
+}
+
+.trust-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--espresso);
+}
+
+.trust-desc {
+  font-size: 13px;
+  color: #6B5C47;
+  margin-left: calc(32px + var(--space-sm));
+}
+
+.covenin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-md);
+  margin-left: calc(32px + var(--space-sm));
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: var(--arena);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--oceano);
+  transition: background 0.2s ease;
+}
+
+.trust-card:hover .covenin-badge {
+  background: var(--arena-dark);
+}
+
+.covenin-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--oceano);
+}
+
+/* ---- LOCATION ---- */
+.location-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.3s ease;
+}
+
+.location-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.location-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.location-row:last-child {
+  margin-bottom: 0;
+}
+
+.location-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.location-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--oceano);
+}
+
+.location-text {
+  font-size: 14px;
+  color: var(--espresso);
+}
+
+.location-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--terracota);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.location-link:hover {
+  color: var(--terracota-hover);
+  transform: translateX(4px);
+}
+
+.location-link svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  border-top: 1px solid var(--arena-dark);
+  margin-top: var(--space-lg);
+}
+
+.footer .wordmark {
+  font-size: 15px;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+.footer-contact {
+  font-size: 13px;
+  color: #6B5C47;
+}
+
+.footer-contact a {
+  color: var(--terracota);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--terracota-hover);
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: #A99B82;
+  margin-top: var(--space-md);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (min-width: 640px) {
+  .header {
+    padding: 14px 32px;
+  }
+  .hero {
+    padding: 80px 32px 56px;
+  }
+  .section {
+    padding: var(--space-xl) 32px;
+  }
+  .cta-group {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .cta-primary,
+  .cta-secondary {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  animation: fadeInUp 0.5s ease-out 0.2s both;
+}
+
+.hero p {
+  animation: fadeInUp 0.5s ease-out 0.3s both;
+}
+
+.hero .cta-primary {
+  animation: fadeInUp 0.5s ease-out 0.4s both;
+}
+
+.hero .cta-secondary {
+  animation: fadeInUp 0.5s ease-out 0.5s both;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.02);
+}
+
